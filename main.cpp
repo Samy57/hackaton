@@ -18,6 +18,7 @@ int main()
   cout << "Quelle map veux-tu jouer ?" << endl;
   cin >> chemin_fichier;
   Game jeu(chemin_fichier, nom_perso);
+  jeu.affichage();
   char key = 'l';
   bool continuer = true;
   while (continuer)
