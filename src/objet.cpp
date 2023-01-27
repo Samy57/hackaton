@@ -1,27 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "objet.hpp"
 
 using namespace std;
-
-class Objet {
-    public :
-        Objet() {}
-        Objet (string nom, char symbole, int sante, int force, int defense, int argent) {
-            this->nom = nom;
-            this->symbole = symbole;
-            this->sante = sante;
-            this->force = force;
-            this->defense = defense;
-            this->argent = argent;
-        }
-        string nom;
-        char symbole;
-        int sante;
-        int force;
-        int defense;
-        int argent;
-};
 
 bool is_in(string nom, vector<Objet> armure_equiped) {
     for (int i = 0; i< static_cast<int>(armure_equiped.size()); i++) {
