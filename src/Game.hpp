@@ -8,8 +8,8 @@
 #include <utility>
 #include "sys/ioctl.h"
 
-#include "personnage.hpp"
-#include "objet.hpp"
+#include "Personnage.hpp"
+#include "Objet.hpp"
 
 class Game
 {

@@ -7,8 +7,8 @@
 #include "sys/ioctl.h"
 const char *cmd_clear = "clear";
 
-#include "personnage.hpp"
-#include "objet.hpp"
+#include "Personnage.hpp"
+#include "Objet.hpp"
 
 Game::Game(std::string nom_carte, std::string nom_joueur)
 {
@@ -24,7 +24,7 @@ Game::Game(std::string nom_carte, std::string nom_joueur)
     fichier.get(spawn_x);
     fichier.get(spawn_y);
     char a;
-    for (int i = 0, i < this->carte_x * this->carte_y, i++)
+    for (int i = 0; i < this->carte_x * this->carte_y; i++)
     {
       fichier.get(a);
       this->carte.push_back(a);
@@ -33,7 +33,7 @@ Game::Game(std::string nom_carte, std::string nom_joueur)
 
     fichier.close(); // on ferme le fichier
   }
-  else // sinon
+  else
     std::cout << "Impossible d'ouvrir le fichier carte " << nom_carte << std::endl;
 
   // Création du joueur
@@ -50,21 +50,30 @@ void Game::affichage()
     exit(1);
   }
 
+  // Carte temporaire sur laquelle on colle les personnages
   std::vector<std::string> carte_affiche{this->carte};
+  carte_affiche[this->joueur.get_position[0] + this->carte_x * this->joueur.get_position[1]] = this->joueur.get_symbole();
 
-  carte_affiche[this->joueur.get_position[0] + this->carte_x * this->joueur.get_position[1]] = joueur.get_symbole();
-
-  for (auto e : ennemis)
+  for (auto e : this->ennemis)
   {
     carte_affiche[this->e.get_position[0] + this->carte_x * this->e.get_position[1]] = e.get_symbole();
   }
 
-  for (int i = 0, i < this->carte_x, i++)
+  for (int y = 0; y < this->carte_y; y++)
   {
-    std::cout << "▬"
+    for (int x = 0; x < this->carte_x; x++)
+    {
+      std::cout << carte_affiche[x + y * this->carte_x];
+    }
+    std::cout << std::endl;
   }
 
-  this->Joueur->AFFICHE_ETATS
+  for (int i = 0; i < this->carte_x; i++)
+  {
+    std::cout << "▬";
+  }
+
+  // this->Joueur->AFFICHE_ETATS
 }
 
 bool Game::update(char a)
@@ -72,5 +81,10 @@ bool Game::update(char a)
 
   this->affichage();
 
-  return True;
+  if (char == "")
+  {
+  }
+  else if (char ==)
+
+    return True;
 }
