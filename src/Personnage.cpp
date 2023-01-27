@@ -2,6 +2,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include "objet.hpp"
 
 class Personnage{
     public:
@@ -16,7 +17,7 @@ class Personnage{
     virtual void recevoir_objet( const std::shared_ptr<Objet> objet)=0;
 
     std::vector<int> get_position(){
-        std::vector position{x_,y_};
+        std::vector<int> position{x_,y_};
         return position;
     };
     std::string get_symbole(){
@@ -30,10 +31,11 @@ class Personnage{
     std::string symbole_;
     int x_;
     int y_;
-    int armure;
+    int defense_;
   
 
 };
+
 
 
 
@@ -50,8 +52,8 @@ class Joueur : public Personnage {
 
 
     virtual void recevoir_objet(const std::shared_ptr<Objet> objet){
-        sante_+=objet.sante;
-        armure_+=objet.armure;
+        sante_+=objet ->sante;
+        defense_+=objet ->defense;
 
     }
 
@@ -70,7 +72,7 @@ class Joueur : public Personnage {
     std::string symbole_{"@"};
     int x_;
     int y_;
-    int armure_;
+    int defense_;
 
 
 };
