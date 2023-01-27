@@ -22,6 +22,9 @@ Joueur::Joueur(std::string nom, int x, int y)
   this->nom_ = nom;
   this->x_ = x;
   this->y_ = y;
+  this -> sante_=20;
+  this -> defense_=5;
+  this -> attaque_=5;
 }
 
 void Joueur::change_attribut( std::string nom_attribut, int nouvelle_valeur){
@@ -58,6 +61,9 @@ Ennemi::Ennemi (std::string nom, int x, int y) {
     this ->nom_=nom;
     this -> x_ =x;
     this -> y_=y;
+    this -> sante_=5;
+    this ->defense_=5;
+    this ->attaque_=5;
     }
 
 
