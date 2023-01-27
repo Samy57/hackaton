@@ -78,13 +78,16 @@ void Game::affichage()
 
 bool Game::update(char a)
 {
+  /*
+  if (a == "")
+  {
+  }
+  else if (a == " ")
+  {
+  }
+  */
 
   this->affichage();
 
-  if (char == "")
-  {
-  }
-  else if (char ==)
-
-    return True;
+  return True;
 }
