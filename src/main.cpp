@@ -3,6 +3,8 @@
 #include<cmath>
 #include <iomanip>
 #include <iostream>
+#include "game.hpp"
+
 using namespace std;
 
 int main()
@@ -26,7 +28,7 @@ int main()
         std::cin >> key;
         
 
-        Game.update(key);
+        jeu.update(key);
         if (key == 'q') 
         {
             continuer=false;
