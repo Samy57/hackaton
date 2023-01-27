@@ -61,7 +61,24 @@ Ennemi::Ennemi (std::string nom, int x, int y) {
     }
 
 
-void Ennemi::suivre(){
+void Ennemi::suivre(std::shared_ptr<Personnage> perso){
+
+    std::vector<int> p;
+    p=perso->get_position();
+    while ((p[0] != x_) and (p[1] != y_)){
+        int norme_x{abs(p[0]-x_)};
+        int norme_y{abs(p[1]-y_)};
+        int sign;
+        if (norme_x>=norme_y){
+            sign=(p[0]-x_)/norme_x;
+            x_+=sign;
+        }
+        else {
+            sign=(p[1]-y_)/norme_y;
+            y_+=sign;
+        }
+    }
+
 
     }
 
