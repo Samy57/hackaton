@@ -15,7 +15,7 @@ void play_game()
     
     cout<<"Comment veux-tu t'appeler petit personnage"<<endl;
     cin>>nom_perso;
-    cout<<"Quelle map veux-tu jouer"<<endl;
+    cout<<"Quelle map veux-tu jouer ?"<<endl;
     cin>>chemin_fichier;
     chemin_fichier="./"+chemin_fichier+".txt";
     Game jeu(chemin_fichier,nom_perso);
@@ -41,7 +41,7 @@ void play_game()
         if (key == 'q') // on veut quitter la partie
         {
             backgroundClear();
-            std::cout << "see you soon little snake !" << std::endl;
+            std::cout << "Au revoir jeune aventurier" << std::endl;
             exit(1);
         }
        
