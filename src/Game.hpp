@@ -9,7 +9,7 @@
 #include "sys/ioctl.h"
 
 #include "Personnage.hpp"
-#include "Objet.hpp"
+#include "objet.hpp"
 
 class Game
 {

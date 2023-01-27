@@ -8,7 +8,7 @@
 const char *cmd_clear = "clear";
 
 #include "Personnage.hpp"
-#include "Objet.hpp"
+#include "objet.hpp"
 
 Game::Game(std::string nom_carte, std::string nom_joueur)
 {
