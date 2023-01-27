@@ -61,13 +61,3 @@ int keyEvent()
   return bytesWaiting;
 }
 
-void sleepOneLap(const int ms)
-{
-  clock_t end;
-  // on initialise la quantité de temps à attendre
-  end = clock() + ms * CLOCKS_PER_SEC / 1000;
-  while (clock() < end)
-  {
-    // wait i.e. do nothing
-  }
-}

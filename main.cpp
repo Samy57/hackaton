@@ -33,10 +33,9 @@ void play_game()
 
         // si un caractère a été entré
         // on le lit sinon ça continue
-        if (keyEvent())
-        {
-            std::cin >> key;
-        }
+        
+        std::cin >> key;
+        
 
         Game.update(key);
         if (key == 'q') // on veut quitter la partie
