@@ -14,6 +14,8 @@ class Personnage{
 
     virtual void recevoir_objet( const std::shared_ptr<Objet> objet)=0;
 
+    
+
     std::vector<int> get_position();
 
     std::string get_symbole();
